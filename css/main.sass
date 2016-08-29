@@ -1,9 +1,23 @@
 ---
+# Sa-sa-sa sass is ma 'jam. This is the main config file.
+# 1. Vars
+# 2. Mixins
+# 3. Includes
 ---
 
 @charset "utf-8"
 
-// Variables
+// 1. :-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-: Variables
+
+// Fonts
+
+$header-font: 'Archer A', 'Archer B', 'Times New Roman', serif
+$body-font: 'Verlag A', 'Verlag B', Arial, sans-serif
+
+// Colors
+
+$white: white
+$black: #303030
 $sky: #2DCCD3
 $teal: #0097A9
 $Denim: #071D49
@@ -13,10 +27,23 @@ $carrot: #EA7600
 $slate: #888B8D
 $cloud: #C8C9C7
 
+// 2. :-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-: Mixins
+
+@mixin square($n)
+  height: $n
+  width: $n
+
+
+// 3. :-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-: Includes
+
 // Vendors
+
 @import "vendors/normalize"
 @import "vendors/toast"
 @import "vendors/bourbon/bourbon"
+
 // Imports
+
 @import "base"
 @import "about"
+@import "nav"
