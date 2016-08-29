@@ -1,12 +1,50 @@
 header
   background: white
   padding: 1rem
+  line-height: 1rem
+  position: fixed
+  width: 100%
   svg
     fill: $sky
+
+.nav-logo
+  align-self: flex-start
+  svg
+    max-width: 25rem
+
 .top-nav
+  align-self: flex-end
   text-align: right
   ul
     list-style-type: none
+    margin: 0
     li
       display: inline
-      max-width: 30px
+      margin-right: 0.5rem
+    a
+      text-decoration: none
+    svg
+      max-width: 3rem
+
+
+.ghost-button
+  display: inline-block
+  border: 2px solid $sky
+  border-radius: 6px
+  padding: 1rem
+  color: $sky
+  text-decoration: none
+  font-weight: bold
+  font-family: $header-font
+
+.footer-nav
+  ul
+    list-style-type: none
+    margin: 0
+    li
+      display: inline
+      margin-right: 0.5rem
+    a
+      text-decoration: none
+    svg
+      max-width: 3rem
