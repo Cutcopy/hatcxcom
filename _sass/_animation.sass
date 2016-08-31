@@ -1,0 +1,74 @@
+@keyframes rotateWord
+  0%
+    opacity: 0
+  2%
+    opacity: 0
+    transform: translateY(-30px)
+  5%
+    opacity: 1
+    transform: translateX(0)
+  17%
+    opacity: 1
+    transform: translateX(0)
+  20%
+    opacity: 0
+    transform: translateX(30px)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+
+.border-bottom
+  width: 50%
+  height: 5px
+  padding: 5px 0
+  margin: 0 auto
+  border-bottom: 5px dotted white
+
+.rw-wrapper
+  text-align: center
+
+section.exist .about-why
+  display: block
+
+section.exist .about-what
+  font-size: 32px
+
+section.exist .about-what p
+  margin-top: 32px
+
+section.exist .about-what .mint
+  font-weight: bold
+
+section.exist .rw-words
+  display: inline
+  text-decoration: underline
+
+section.exist .rw-words-placeholder
+  visibility: hidden
+
+section.exist .rw-words span
+  position: absolute
+  opacity: 0
+  overflow: hidden
+  animation: rotateWord 18s linear infinite 0s
+
+section.exist .rw-words span:nth-child(2)
+  -webkit-animation-delay: 3s
+  animation-delay: 3s
+
+section.exist .rw-words span:nth-child(3)
+  -webkit-animation-delay: 6s
+  animation-delay: 6s
+
+section.exist .rw-words span:nth-child(4)
+  -webkit-animation-delay: 9s
+  animation-delay: 9s
+
+section.exist .rw-words span:nth-child(5)
+  -webkit-animation-delay: 12s
+  animation-delay: 12s
+
+section.exist .rw-words span:nth-child(6)
+  -webkit-animation-delay: 15s
+  animation-delay: 15s

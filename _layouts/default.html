@@ -1,8 +1,37 @@
 <!DOCTYPE html>
 <html>
-  {% include head.html %}
+  <head>
+    <meta charset="utf-8">
+    <title>{{page.title}}</title>
+    <title>Method - Digital Agency, Auckland, NZ - Web, Virtual &amp; Augmented Reality, Mobile</title>
+
+   <!-- Meta Junk -->
+    <meta name="description" content=" # ">
+    <meta name="keywords" content=" # ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+   <!-- Facebook -->
+    <meta property="og:site_name" content="{{site.title}} ">
+    <meta property="og:type" content="Website">
+    <meta property="og:url" content="{{site.url}}{{page.url}} ">
+    <meta property="og:title" content="{{page.title}}">
+    <meta property="og:description" content="{{site.description}}">
+    <meta property="og:image" content="http://method.digital/www/images/layout/method-fb.jpg">
+
+   <!-- Icons -->
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+   <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cloud.typography.com/6798514/7510152/css/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6798514/6680552/css/fonts.css" />
+  </head>
   <body>
     {{content}}
-    {% include footer.html %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

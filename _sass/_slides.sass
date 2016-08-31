@@ -1,15 +1,18 @@
-
-
 .slide
   background-size: cover
   background-position: center
   background-repeat: no-repeat
   height: 100vh
+  padding: 2rem
   display: flex
   align-items: center
   justify-content: center
+  text-shadow: 0 4px 6px transparentize($denim, 0.5)
+  h2
+    text-transform: uppercase
   svg
     max-width: 30rem
+    +filter(drop-shadow(0 4px 6px transparentize($denim, 0.5)))
   .heart-red
     fill: $strawberry
     max-width: 3rem
@@ -41,10 +44,15 @@
   background-size: contain
   background-position: center center
   background-repeat: no-repeat
-  height: 75vh
-  display: flex
-  align-items: center
   text-align: center
+  margin-bottom: 4rem
+  h2
+    font-size: 15rem
+
+.enlarged
+  font-size: 30rem
+  line-height: 15rem
+
 
 // ABOUT
 .about

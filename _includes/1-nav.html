@@ -1,26 +1,28 @@
-<header>
+<header id="navigation-bar">
   <div class="row">
         <div class="nav-logo col col--3-of-12">
-          {% include _svg/Hatcx_logo_full.svg %}
+          <a href="#">
+            {% include /_svg/Hatcx_logo_full.svg %}
+          </a>
         </div>
         <nav class="col col--9-of-12 top-nav">
           <ul>
             <li><a href="#jobs" class="ghost-button">jobs</a></li>
             <li>
-              <a href="#">
-                {% include _svg/Facebook.svg %}
+              <a href="{{site.facebook}}">
+                {% include /_svg/Facebook.svg %}
               </a>
             </li>
 
             <li>
-                <a href="#">
-                  {% include _svg/Twitter.svg %}
+                <a href="{{site.twitter}}">
+                  {% include /_svg/Twitter.svg %}
                 </a>
             </li>
 
             <li>
-              <a href="#">
-                {% include _svg/Envelope.svg %}
+              <a href="mailto:{{site.email}}">
+                {% include /_svg/Envelope.svg %}
               </a>
             </li>
         </ul>
