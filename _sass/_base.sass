@@ -10,15 +10,19 @@ body
   color: $white
   font-family: $body-font
   font-size: 2rem
-
+  @media screen and (max-width: 700px)
+    font-size: 1rem
 h1, h2, h3, h4, h5, h6
   font-family: $header-font
   margin: 0
 
 h1
   font-size: 8rem
+
 h2
   font-size: 6rem
+  @media screen and (max-width: 700px)
+    font-size: 3rem
 h3
   font-size: 4rem
 h4
@@ -46,4 +50,18 @@ section
   svg
     fill: white
 
-/* Type */
+.four0four
+  +display(flex)
+  +flex-direction(column)
+  +justify-content(center)
+  +align-items(center)
+  height: 100vh
+  font-size: 2rem
+  .container
+    text-align: center
+  a
+    font-size: 5rem
+  h1
+    font-size: 15rem
+  svg
+    fill: white

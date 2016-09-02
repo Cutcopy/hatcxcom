@@ -8,7 +8,7 @@
   +align-items(center)
   +justify-content(center)
   //text-shadow: 0 4px 6px transparentize($denim, 0.5)
-  @media screen and (max-width: 700px)
+  //@media screen and (max-width: 700px)
     background-position: right
   h2
     text-transform: uppercase
@@ -112,6 +112,9 @@
 .besties
   background-color: $mustard
   background-image: url(/img/Best_peeps.jpg)
+  @media screen and (max-width: 700px)
+    //background-size: 500px
+    background-position: left
 
 .positions
   background-color: $strawberry
@@ -134,6 +137,10 @@
   //+justify-content(space-between)
   +align-items(flex-start)
   box-shadow: 14px 14px 9px transparentize($denim, 0.5)
+  @media screen and (max-width: 700px)
+    +size(100px)
+    font-size: 5px
+    margin: 1rem
   p
     width: 100%
     text-align: center
@@ -148,7 +155,8 @@
   +background-image(radial-gradient(lighten($denim, 50%), $denim, $black))
   border-radius: 50%
   margin: 10px auto 50px auto
-
+  @media screen and (max-width: 700px)
+    +size(10px)
 .job-title
   width: 100%
   text-align: center
