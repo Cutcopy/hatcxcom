@@ -27,7 +27,8 @@ twitter: 'https://twitter.com/HATCX_'
 # Build settings
 markdown: kramdown
 repository: PAGES_REPO_NWO
-
+sass:
+  style: compressed
 # Plugins
 gems:
   - jekyll-sitemap

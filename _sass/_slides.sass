@@ -1,3 +1,4 @@
+
 .slide
   background-size: cover
   background-position: center center
@@ -25,7 +26,7 @@
 // HERO
 .hero
   background-color: $strawberry
-  background-image: url(/img/mom_on_comp.jpg)
+  background-image: url(/img/mom_on_comp.png)
 
 .hatcx-mark
   background: url(/img/Hatcx_logo_white.svg)
@@ -40,29 +41,80 @@
 // EXIST
 .exist
   background-color: $denim
-  background: url(/img/exist.png)
+  background: url(/img/exist_min.png)
   background-repeat: no-repeat
   background-size: cover
 
+#emblem-header
+  +transition(5s ease-out)
 .emblem
   background: url(/img/emblem_white.svg)
   background-size: contain
   background-position: center center
   background-repeat: no-repeat
   text-align: center
-  margin-bottom: 4rem
+  @media screen and (min-width: 700px)
+    margin-bottom: 4rem
   h2
-    font-size: 15rem
+    font-size: 4rem
+    @media screen and (min-width: 700px)
+      font-size: 12rem
+  .enlarged
+    font-size: 6rem
+    @media screen and (min-width: 900px)
+      font-size: 24rem
+      line-height: 15rem
 
-.enlarged
-  font-size: 30rem
-  line-height: 15rem
+  .about-why
+    display: block
 
+  .about-what p
+    margin-top: 32px
+
+.rw-sentence
+  @media screen and (max-width: 700px)
+    font-size: 2rem
+
+.about-what
+  @media screen and (max-width: 700px)
+    font-size: 1rem
+
+.rw-words
+  display: inline
+  text-decoration: underline
+  span
+    position: absolute
+    opacity: 0
+    overflow: hidden
+    animation: rotateWord 18s linear infinite 0s
+    &:nth-child(2)
+      +animation-delay(3s)
+    &:nth-child(3)
+      +animation-delay(6s)
+    &:nth-child(4)
+      +animation-delay(9s)
+    &:nth-child(5)
+      +animation-delay(12s)
+    &:nth-child(6)
+      +animation-delay(15s)
+
+.rw-words-placeholder
+  visibility: hidden
+
+.border-bottom
+  width: 50%
+  height: 5px
+  padding: 5px 0
+  margin: 0 auto
+  border-bottom: 5px dotted white
+
+.rw-wrapper
+  text-align: center
 
 // ABOUT
 .about
   background-color: $sky
-  background: url(/img/omaha.jpg)
+  background: url(/img/omaha_2.png)
   background-size: cover
 
 .heart
@@ -87,9 +139,12 @@
   .col
     width: 500px
     margin: 10px
+
 .flexible-hours
   background-color: $mustard
   background-image: url(/img/clocks.jpg)
+  @media screen and (max-width: 600px)
+    background-image: url(/img/clocks-600.png)
   background-position: left top
   //@include filter(brightness(0.85))
 
@@ -99,7 +154,7 @@
 
 .casual
   background-color: $mustard
-  background-image: url(/img/casz.jpg)
+  background-image: url(/img/casz-min.jpg)
 
 .breaktime
   background-color: $denim
@@ -107,7 +162,7 @@
 
 .vacation
   background-color: $strawberry
-  background-image: url(/img/vacay.jpg)
+  background-image: url(/img/vacay_8.png)
 
 .besties
   background-color: $mustard
@@ -118,7 +173,7 @@
 
 .positions
   background-color: $strawberry
-  background-image: url(/img/Corkboard_red.jpg)
+  background-image: url(/img/Corkboard_red.png)
 
 .post-it-row
   +display(flex)
@@ -157,9 +212,10 @@
   margin: 10px auto 50px auto
   @media screen and (max-width: 700px)
     +size(10px)
+
 .job-title
   width: 100%
   text-align: center
 
 .road
-  background-image: url(/img/future-min.jpg)
+  background-image: url(/img/future-min.png)

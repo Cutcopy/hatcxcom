@@ -2,16 +2,17 @@ $(document).ready(function() {
     $('#fullpage').fullpage({
         navigation: false,
         navigationPosition: 'right',
+        //fixedElements: '#navigation-bar',
         anchors:['top', 'about', 'whoWeAre', 'careers', 'flexibleHours','events', 'casual','breakTime', 'vacation','bestPeeps','jobs','roadAhead'],
         //Scrolling
         css3: true,
-        scrollingSpeed: 700,
+        scrollingSpeed: 900,
         autoScrolling: true,
         fitToSection: true,
         fitToSectionDelay: 1000,
         scrollBar: true,
-        easing: 'easeInOutCubic',
-        easingcss3: 'ease-in',
+        easing: 'easeInOutCirc',
+        easingcss3: 'cubic-bezier(0.000, 1.250, 0.325, 1.650)',
         loopBottom: false,
         loopTop: false,
         loopHorizontal: true,
@@ -21,7 +22,7 @@ $(document).ready(function() {
         interlockedSlides: false,
         resetSliders: false,
         //normalScrollElements: '#element1, .element2',
-        scrollOverflow: true,
+        scrollOverflow: false,
         scrollOverflowOptions: null,
         touchSensitivity: 15,
         normalScrollElementTouchThreshold: 5,
@@ -44,4 +45,21 @@ $(document).ready(function() {
         afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
         onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
     });
+    // Scrollex
+  //   $(function() {
+  //   $('#emblem-header').scrollex({
+  //     enter: function() {
+  //
+  //       // Set #foobar's background color to green when we scroll into it.
+  //         $(this).css('background-color', 'green');
+  //
+  //     },
+  //     leave: function() {
+  //
+  //       // Reset #foobar's background color when we scroll out of it.
+  //         $(this).css('background-color', '');
+  //
+  //     }
+  //   });
+  // });
 });
