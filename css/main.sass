@@ -27,12 +27,32 @@ $carrot: #EA7600
 $slate: #888B8D
 $cloud: #C8C9C7
 
+
 // 2. :-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-: Mixins
 
 @mixin square($n)
   height: $n
   width: $n
 
+@mixin not-phones
+  @media screen and (min-width: 768px)
+    @content
+@mixin not-tablets
+  @media screen and (min-width: 992px)
+    @content
+@mixin not-desktop
+  @media screen and (min-width: 1200px)
+    @content
+
+@mixin phones
+  @media screen and (max-width: 768px)
+    @content
+@mixin tablets
+  @media screen and (max-width: 992px)
+    @content
+@mixin desktop
+  @media screen and (max-width: 1200px)
+    @content
 
 // 3. :-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-: Includes
 

@@ -8,22 +8,26 @@
   +display(flex)
   +align-items(center)
   +justify-content(center)
+  +transition(3s)
   //text-shadow: 0 4px 6px transparentize($denim, 0.5)
   //@media screen and (max-width: 700px)
     background-position: right
   h2
     text-transform: uppercase
-    //font-size: 10rem
+    font-size: 10rem
+    +phones
+      font-size: 3rem
   svg
     max-width: 30rem
     //+filter(drop-shadow(0 4px 6px transparentize($denim, 0.5)))
-    @media screen and (max-width: 700px)
+    +phones
       max-width: 10rem
   .heart-red
     fill: $strawberry
     max-width: 3rem
 
 // HERO
+
 .hero
   background-color: $strawberry
   background-image: url(/img/mom_on_comp.png)
@@ -35,6 +39,7 @@
   background-repeat: no-repeat
   height: 75vh
   +display(flex)
+  //+justify-content(center)
   +align-items(center)
   text-align: center
 
@@ -53,15 +58,15 @@
   background-position: center center
   background-repeat: no-repeat
   text-align: center
-  @media screen and (min-width: 700px)
+  +not-phones
     margin-bottom: 4rem
   h2
     font-size: 4rem
-    @media screen and (min-width: 700px)
+    +not-phones
       font-size: 12rem
   .enlarged
     font-size: 6rem
-    @media screen and (min-width: 900px)
+    +not-tablets
       font-size: 24rem
       line-height: 15rem
 
@@ -72,12 +77,8 @@
     margin-top: 32px
 
 .rw-sentence
-  @media screen and (max-width: 700px)
+  +phones
     font-size: 2rem
-
-.about-what
-  @media screen and (max-width: 700px)
-    font-size: 1rem
 
 .rw-words
   display: inline
@@ -86,7 +87,7 @@
     position: absolute
     opacity: 0
     overflow: hidden
-    animation: rotateWord 18s linear infinite 0s
+    +animation(rotateWord 18s linear infinite 0s)
     &:nth-child(2)
       +animation-delay(3s)
     &:nth-child(3)
@@ -114,7 +115,7 @@
 // ABOUT
 .about
   background-color: $sky
-  background: url(/img/omaha_2.png)
+  background: url(/img/omaha.jpg)
   background-size: cover
 
 .heart
@@ -167,7 +168,7 @@
 .besties
   background-color: $mustard
   background-image: url(/img/Best_peeps.jpg)
-  @media screen and (max-width: 700px)
+  +phones
     //background-size: 500px
     background-position: left
 
@@ -192,7 +193,7 @@
   //+justify-content(space-between)
   +align-items(flex-start)
   box-shadow: 14px 14px 9px transparentize($denim, 0.5)
-  @media screen and (max-width: 700px)
+  +phones
     +size(100px)
     font-size: 5px
     margin: 1rem
@@ -210,7 +211,7 @@
   +background-image(radial-gradient(lighten($denim, 50%), $denim, $black))
   border-radius: 50%
   margin: 10px auto 50px auto
-  @media screen and (max-width: 700px)
+  +phones
     +size(10px)
 
 .job-title
@@ -218,4 +219,4 @@
   text-align: center
 
 .road
-  background-image: url(/img/future-min.png)
+  background-image: url(/img/future-min.jpg)

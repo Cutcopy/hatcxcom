@@ -46,20 +46,20 @@ $(document).ready(function() {
         onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
     });
     // Scrollex
-  //   $(function() {
-  //   $('#emblem-header').scrollex({
-  //     enter: function() {
-  //
-  //       // Set #foobar's background color to green when we scroll into it.
-  //         $(this).css('background-color', 'green');
-  //
-  //     },
-  //     leave: function() {
-  //
-  //       // Reset #foobar's background color when we scroll out of it.
-  //         $(this).css('background-color', '');
-  //
-  //     }
-  //   });
-  // });
+    $(function() {
+    $('.slide').scrollex({
+      enter: function() {
+
+        // Set #foobar's background color to green when we scroll into it.
+          $(this).css('opacity', 1);
+
+      },
+      leave: function() {
+
+        // Reset #foobar's background color when we scroll out of it.
+          $(this).css('opacity', 0);
+
+      }
+    });
+  });
 });
