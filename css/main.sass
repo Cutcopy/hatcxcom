@@ -27,6 +27,19 @@ $carrot: #EA7600
 $slate: #888B8D
 $cloud: #C8C9C7
 
+//Photos
+$hero: '/img/mom_on_comp.jpg'
+$exist: '/img/exist.png'
+$about: '/img/omaha.jpg'
+$careers: '/img/careers_bkg.png'
+$flex: '/img/clocks.jpg'
+$events: '/img/bokeh.jpg'
+$casual: '/img/casz.jpg'
+$breaktime: '/img/BreakTime.jpg'
+$vacation: '/img/vacay.jpg'
+$bestpeeps: '/img/Best_peeps.jpg'
+$positions: '/img/Corkboard_red.jpg'
+$road: '/img/future-min.jpg'
 
 // 2. :-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-: Mixins
 
@@ -54,6 +67,9 @@ $cloud: #C8C9C7
   @media screen and (max-width: 1200px)
     @content
 
+@mixin bg($path)
+  background-image: url($path)
+
 // 3. :-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-: Includes
 
 // Vendors
@@ -63,7 +79,6 @@ $cloud: #C8C9C7
 @import "vendors/bourbon/bourbon"
 @import "vendors/animate"
 @import "vendors/jquery.fullPage"
-
 // Imports
 
 @import "base"

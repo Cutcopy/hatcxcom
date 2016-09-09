@@ -20,7 +20,7 @@ $(document).ready(function() {
         continuousHorizontal: false,
         scrollHorizontally: false,
         interlockedSlides: false,
-        resetSliders: false,
+        resetSliders: true,
         //normalScrollElements: '#element1, .element2',
         scrollOverflow: false,
         scrollOverflowOptions: null,
@@ -61,5 +61,12 @@ $(document).ready(function() {
 
       }
     });
-  });
+
+    $('.cont').scrollex({
+      enter: function() {
+        $(this).css('animation', 'bounce 3s ease-out');
+      }
+    });
+
+  }); // \\Scrollex
 });
