@@ -1,10 +1,9 @@
-
-.slide
+.section
   background-size: cover
   background-position: center center
   background-repeat: no-repeat
   height: 100vh
-  padding: 2rem
+  //padding: 2rem
   +display(flex)
   +align-items(center)
   +justify-content(center)
@@ -26,11 +25,30 @@
     fill: $strawberry
     max-width: 3rem
 
+.container
+  +transition(1s linear)
+#clock_icon
+  +transition(1.5s ease-out)
+  +animation-delay(1s)
+#code
+  +transition(1.5s ease)
+  +animation-delay(5s)
+#sketch
+  +transition(1.5s ease)
+  +animation-delay(6s)
+
+// .careers.active #code
+//   +animation(down 1s linear 0.25s forwards)
+// .careers.active #sketch
+//   +animation(down 1s linear 0.5s forwards)
+// .careers.active #analytics
+//   +animation(down 1s linear 1s forwards)
+
 // HERO
 
 .hero
   background-color: $strawberry
-  background-image: url(/img/mom_on_comp.png)
+  +bg($hero)
   +tablets
     background-position: center
   @media screen and (max-width: 400px)
@@ -50,9 +68,7 @@
 // EXIST
 .exist
   background-color: $denim
-  background: url(/img/exist_min.png)
-  background-repeat: no-repeat
-  background-size: cover
+  +bg($exist)
 
 #emblem-header
   +transition(5s ease-out)
@@ -119,11 +135,11 @@
 // ABOUT
 .about
   background-color: $sky
-  background: url(/img/omaha.jpg)
-  background-size: cover
+  +bg($about)
+
 
 .heart
-  background: url(/img/heart_white.svg)
+  +bg('/img/heart_white.svg')
   background-size: contain
   background-position: center center
   background-repeat: no-repeat
@@ -131,13 +147,14 @@
   +display(flex)
   +flex-direction(column)
   +align-items(center)
-  text-align: centerd
+  text-align: center
 
 .careers
   background-color: $denim
-  background: url(/img/careers_bkg.png)
+  +bg($careers)
   background-size: cover
-
+  h2
+    margin-top: 30px
 .career-boxes
   +display(flex)
   +justify-content(space-around)
@@ -147,38 +164,43 @@
 
 .flexible-hours
   background-color: $mustard
-  background-image: url(/img/clocks.jpg)
-  @media screen and (max-width: 600px)
-    background-image: url(/img/clocks-600.png)
+  +bg($flex)
+  +phones
+    +bg("/img/clocks-600.png")
   background-position: left top
   //@include filter(brightness(0.85))
 
 .events
   background-color: $strawberry
-  background-image: url(/img/bokeh.jpg)
+  +bg($events)
 
 .casual
   background-color: $mustard
-  background-image: url(/img/casz-min.jpg)
+  +bg($casual)
 
 .breaktime
   background-color: $denim
-  background-image: url(/img/BreakTime.jpg)
+  +bg($breaktime)
 
 .vacation
   background-color: $strawberry
-  background-image: url(/img/vacay_8.png)
+  +bg($vacation)
 
 .besties
   background-color: $mustard
-  background-image: url(/img/Best_peeps.jpg)
+  +bg($bestpeeps)
   +phones
-    //background-size: 500px
     background-position: left
 
 .positions
   background-color: $strawberry
-  background-image: url(/img/Corkboard_red.png)
+  +bg($positions)
+
+.road
+  +bg($road)
+
+
+// POST ITS
 
 .post-it-row
   +display(flex)
@@ -221,6 +243,3 @@
 .job-title
   width: 100%
   text-align: center
-
-.road
-  background-image: url(/img/future-min.jpg)

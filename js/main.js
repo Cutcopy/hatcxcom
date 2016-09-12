@@ -1,8 +1,5 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
-        navigation: false,
-        navigationPosition: 'right',
-        //fixedElements: '#navigation-bar',
         anchors:['top', 'about', 'whoWeAre', 'careers', 'flexibleHours','events', 'casual','breakTime', 'vacation','bestPeeps','jobs','roadAhead'],
         //Scrolling
         css3: true,
@@ -47,26 +44,43 @@ $(document).ready(function() {
     });
     // Scrollex
     $(function() {
-    $('.slide').scrollex({
+      $('.container').scrollex({
+        enter: function() {
+
+          // Set #foobar's background color to green when we scroll into it.
+            $(this).css('opacity', 1);
+            $(this).css('animation', 'bounce 3s ease-out');
+            $(this).css('transform', 'translateX(0px)');
+        },
+        leave: function() {
+
+          // Reset #foobar's background color when we scroll out of it.
+            $(this).css('opacity', 0);
+            $(this).css('transform', 'translateX(-500px)')
+        }
+    });
+    $('#clock_icon').scrollex({
       enter: function() {
-
-        // Set #foobar's background color to green when we scroll into it.
-          $(this).css('opacity', 1);
-
+        $(this).css('transform','rotate(30deg)');
       },
       leave: function() {
-
-        // Reset #foobar's background color when we scroll out of it.
-          $(this).css('opacity', 0);
-
+        $(this).css('transform','rotate(0deg)');
       }
     });
-
-    $('.cont').scrollex({
+    $('#code').scrollex({
       enter: function() {
-        $(this).css('animation', 'bounce 3s ease-out');
+        $(this).css('animation', 'down 1s linear 0.5s forwards')
       }
     });
-
+    $('#sketch').scrollex({
+      enter: function() {
+        $(this).css('animation', 'down 1s linear 1s forwards')
+      }
+    });
+    $('#analytics').scrollex({
+      enter: function() {
+        $(this).css('animation', 'down 1s linear 1.5s forwards')
+      }
+    });
   }); // \\Scrollex
 });
