@@ -15,6 +15,8 @@ header
 .nav-logo
   +align-self(flex-start)
   width: 25%
+  +phones
+    width: 50%
   svg
     max-width: 20rem
 
@@ -35,6 +37,8 @@ header
       max-width: 3rem
       position: relative
       top: 0.7rem
+      +phones
+        max-width: 2rem
 
 .ghost-button
   display: inline-block
@@ -45,7 +49,11 @@ header
   text-decoration: none
   font-weight: bold
   font-family: $header-font
-
+  &:hover
+    color: white
+    background-color: transparentize(white, 0.5)
+  +phones
+    padding: 0.5rem
 .footer-nav
   ul
     list-style-type: none

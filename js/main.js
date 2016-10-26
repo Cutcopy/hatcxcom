@@ -69,17 +69,17 @@ $(document).ready(function() {
     });
     $('#code').scrollex({
       enter: function() {
-        $(this).css('animation', 'down 1s linear 0.5s forwards')
+        $(this).css('animation', 'down 1s linear 1s forwards')
       }
     });
     $('#sketch').scrollex({
       enter: function() {
-        $(this).css('animation', 'down 1s linear 1s forwards')
+        $(this).css('animation', 'down 1s linear 1.5s forwards')
       }
     });
     $('#analytics').scrollex({
       enter: function() {
-        $(this).css('animation', 'down 1s linear 1.5s forwards')
+        $(this).css('animation', 'down 1s linear 2s forwards')
       }
     });
   }); // \\Scrollex
