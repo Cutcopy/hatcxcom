@@ -220,8 +220,7 @@
   +align-items(flex-start)
   box-shadow: 14px 14px 9px transparentize($denim, 0.5)
   +phones
-    +size(100px)
-    font-size: 5px
+    +size(200px)
     margin: 1rem
   p
     width: 100%
@@ -243,3 +242,43 @@
 .job-title
   width: 100%
   text-align: center
+
+.fp-viewing-flexibleHours
+  .clockTime
+    +animation(roll 3s ease-out)
+    +transform-origin(center)
+  .clockMinute
+    +animation(roll 6s linear infinite)
+    +transform-origin(212px 216px)
+  .clockHour
+    +animation(roll 72s linear infinite)
+    +transform-origin(210px 215px)
++keyframes(roll)
+  from
+    +transform(rotate(0deg))
+  to
+    +transform(rotate(360deg))
+
+.fp-viewing-casual
+  .sleeveLeft
+    +animation(unfoldLeft 2s)
+    +transform-origin(top center)
+  .sleeveRight
+    +animation(unfoldRight 2s)
+    +transform-origin(top center)
+  .tshirt
+    overflow: visible
++keyframes(unfoldLeft)
+  from
+    +transform(rotate(180deg) scale(3))
+  to
+    +transform(rotate(0deg) scale(1))
++keyframes(unfoldRight)
+  from
+    +transform(rotate(-180deg) scale(3))
+  to
+    +transform(rotate(0deg) scale(1))
+
+.fp-viewing-breakTime
+  .steam
+    transform: translateY(90px) translateX(-13px)
