@@ -53,6 +53,7 @@
     background-position: center
   @media screen and (max-width: 400px)
     background-position: -550px
+    +bg($hero)
 
 .hatcx-mark
   background: url(/img/Hatcx_logo_white.svg)
@@ -69,7 +70,9 @@
 .exist
   background-color: $denim
   +bg($exist)
-
+  p
+    +phones
+      font-size: 1rem
 #emblem-header
   +transition(5s ease-out)
 .emblem
@@ -136,7 +139,16 @@
 .about
   background-color: $sky
   +bg($about)
-
+  h2
+    +phones
+      margin-bottom: 1rem
+      font-size: 2rem
+  h3
+    +phones
+      font-size: 1.3rem
+  p
+    +phones
+      font-size: 1rem
 
 .heart
   +bg('/img/heart_white.svg')
@@ -242,43 +254,3 @@
 .job-title
   width: 100%
   text-align: center
-
-.fp-viewing-flexibleHours
-  .clockTime
-    +animation(roll 3s ease-out)
-    +transform-origin(center)
-  .clockMinute
-    +animation(roll 6s linear infinite)
-    +transform-origin(212px 216px)
-  .clockHour
-    +animation(roll 72s linear infinite)
-    +transform-origin(210px 215px)
-+keyframes(roll)
-  from
-    +transform(rotate(0deg))
-  to
-    +transform(rotate(360deg))
-
-.fp-viewing-casual
-  .sleeveLeft
-    +animation(unfoldLeft 2s)
-    +transform-origin(top center)
-  .sleeveRight
-    +animation(unfoldRight 2s)
-    +transform-origin(top center)
-  .tshirt
-    overflow: visible
-+keyframes(unfoldLeft)
-  from
-    +transform(rotate(180deg) scale(3))
-  to
-    +transform(rotate(0deg) scale(1))
-+keyframes(unfoldRight)
-  from
-    +transform(rotate(-180deg) scale(3))
-  to
-    +transform(rotate(0deg) scale(1))
-
-.fp-viewing-breakTime
-  .steam
-    transform: translateY(90px) translateX(-13px)
