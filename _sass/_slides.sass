@@ -231,16 +231,29 @@
   //+justify-content(space-between)
   +align-items(flex-start)
   box-shadow: 14px 14px 9px transparentize($denim, 0.5)
-  +phones
-    +size(200px)
-    margin: 1rem
   p
     width: 100%
     text-align: center
+  +phones
+    //background: transparentize(white, 0.7)
+    //color: white
+    //box-shadow: 0px 0px 0px transparent
+    +flex-direction(row)
+    +align-items(center)
+    padding: 1rem
+    font-size: 1.5rem
+    font-weight: lighter
+    +size(100%)
+    margin: 1rem
+    p
+      text-align: left
+      margin: 0
 
-@for $i from 1 through 5
-  .post-it:nth-child(#{$i})
-    +transform(rotate(random(20)+deg))
+
++not-phones
+  @for $i from 1 through 5
+    .post-it:nth-child(#{$i})
+      +transform(rotate(random(20)+deg))
 
 .pin
   +align-self(flex-start)
@@ -249,8 +262,12 @@
   border-radius: 50%
   margin: 10px auto 50px auto
   +phones
-    +size(10px)
+    +size(0px)
 
 .job-title
   width: 100%
   text-align: center
+  +phones
+    text-align: left
+    &::after
+      content: " :"

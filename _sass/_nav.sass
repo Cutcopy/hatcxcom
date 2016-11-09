@@ -1,4 +1,4 @@
-header
+#navigation-bar
   //background: white
   //margin-top: 4rem
   padding: 1rem
@@ -6,17 +6,19 @@ header
   position: fixed
   z-index: 70
   width: 100%
+  svg
+    fill: $white
   .row
     width: 100%
     +display(flex)
-  svg
-    fill: $white
+    +flex-direction(row)
+    +align-items
 
 .nav-logo
   +align-self(flex-start)
   width: 25%
   +phones
-    width: 50%
+    width: 30%
   svg
     max-width: 20rem
 
@@ -24,6 +26,8 @@ header
   +align-self(flex-end)
   text-align: right
   width: 75%
+  +phones
+    display: none
   ul
     list-style-type: none
     margin: 0
@@ -39,6 +43,17 @@ header
       top: 0.7rem
       +phones
         max-width: 2rem
+
+.drawer-open
+  width: 70%
+  +display(flex)
+  +justify-content(flex-end)
+  +not-phones
+    display: none
+  svg
+    +size(30px)
+
+
 
 .ghost-button
   display: inline-block
@@ -74,25 +89,64 @@ header
 .fp-viewing-roadAhead .bricktop
   opacity: 1
 
+.mobilenav
+  position: fixed
+  top: 0
+  left: 0
+  height: 40px
+  z-index: 70
+  +animation(grow 0.5s ease-out)
+  +animation-fill-mode(forwards)
+  //height: 100vh
+  #navigation-bar
+    padding: 0.5rem
+    //height: 100vh
+  .row
+    width: 100%
+    +display(flex)
+    +flex-direction(column)
+  .nav-logo
+    width: 100%
+  .top-nav
+    display: block
+    width: 100%
+    ul
+      li
+        &:nth-child(2)
+          display: block
+
++keyframes(grow)
+  from
+    height: 60px
+  to
+    height: 100vh
 // .fp-viewing-roadAhead .top-nav svg
 //   display: none
 //   transition: 0.6s
-.top-nav
-  +phones
-    display: none
 
-.mobilenav
-  position: absolute
-  z-index: 999
-  height: 100vh
-  width: 100%
-  +display(flex)
-  +align-items(center)
-  +justify-content(center)
-  background: transparentize($teal, 0.15)
-  svg
-    max-width: 3rem
-  +not-phones
-    display: none
+// .mobilenav
+//
+//   svg
+//     max-width: 3rem
+//   +not-phones
+//     display: none
+//   +phones
+//     display: block
+
+$sections: ('top')('about')('whoWeAre')('careers')('flexibleHours')('events')('casual')('breakTime')('vacation')('bestPeeps')('jobs')('roadAhead')('roadAhead')
+$color: ($white, $sky, $denim, $white, $strawberry, $denim,$mustard, $denim, $strawberry, $strawberry, $denim, transparent)
+$logo: ($strawberry, $white, $white, $teal, $mustard, $strawberry,$denim, $white, $teal, $mustard, $white, $white)
+
+@for $i from 1 to length($sections)
   +phones
-    display: block
+    .fp-viewing-#{nth($sections, $i)}
+      #navigation-bar
+        background: transparentize(nth($color, $i), 0.2)
+        box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25)
+        +transition(0.5s)
+        svg
+          fill: nth($logo, $i)
+          +transition(1s)
+        .ghost-button
+          color: nth($logo, $i)
+          border: 2px solid nth($logo, $i)

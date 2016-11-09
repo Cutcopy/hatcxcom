@@ -82,5 +82,9 @@ $(document).ready(function() {
         $(this).css('animation', 'down 1s linear 2s forwards')
       }
     });
+
   }); // \\Scrollex
+  $('.drawer-open').click(function(){
+		$('#navigation-bar').toggleClass('mobilenav');
+	})
 });
