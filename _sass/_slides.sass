@@ -67,12 +67,16 @@
   text-align: center
 
 // EXIST
+
 .exist
   background-color: $denim
   +bg($exist)
   p
     +phones
       font-size: 1rem
+  .container
+    +phones
+      padding-top: 5rem
 #emblem-header
   +transition(5s ease-out)
 .emblem

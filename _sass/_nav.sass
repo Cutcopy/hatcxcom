@@ -21,6 +21,8 @@
     width: 30%
   svg
     max-width: 20rem
+    +phones
+      max-width: 15rem
 
 .top-nav
   +align-self(flex-end)
@@ -108,12 +110,29 @@
   .nav-logo
     width: 100%
   .top-nav
+    position: absolute
+    top: 50%
+    text-align: center
     display: block
     width: 100%
     ul
       li
         &:nth-child(2)
           display: block
+
+.mobilenav
+  .hamburger
+    overflow: visible
+  .bun
+    +transform(rotate(45deg))
+    transform-origin: center
+    +transition(0.5s)
+  .bottom-bun
+    +transform(rotate(-45deg))
+    transform-origin: center
+    +transition(0.5s)
+  .burger
+    height: 0px
 
 +keyframes(grow)
   from
