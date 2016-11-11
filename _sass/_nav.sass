@@ -90,7 +90,7 @@
 
 .fp-viewing-roadAhead .bricktop
   opacity: 1
-
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= mobilenav!
 .mobilenav
   position: fixed
   top: 0
@@ -111,7 +111,7 @@
     width: 100%
   .top-nav
     position: absolute
-    top: 50%
+    top: 40%
     text-align: center
     display: block
     width: 100%
@@ -123,16 +123,43 @@
 .mobilenav
   .hamburger
     overflow: visible
+    +transform(rotate(360deg))
+    rect
+      +transform-origin(center)
+      +animation-fill-mode(forwards)
   .bun
-    +transform(rotate(45deg))
-    transform-origin: center
-    +transition(0.5s)
-  .bottom-bun
-    +transform(rotate(-45deg))
-    transform-origin: center
-    +transition(0.5s)
+    +animation(xxx 0.5s)
   .burger
-    height: 0px
+    //height: 0
+    opacity: 0
+    +transform-origin(right)
+    +transition(0.2s ease-out)
+  .bottom-bun
+    +animation(-xxx 0.5s)
+
+  // .bun
+  //   +transform-origin(center)
+  //   +transform(rotate(45deg) translate(8px, 7px))
+  //   +transition(0.5s)
+  // .bottom-bun
+  //   +transform-origin(center)
+  //   +transform(rotate(-45deg) translate(8px, -7px))
+  //   +transition(0.5s)
+  // .burger
+  //   opacity: 0
+  //   +transition(0.5s)
+
++keyframes(xxx)
+  from
+    +transform(rotate(0deg) translate(0px, 0px))
+  to
+    +transform(rotate(45deg) translate(8px, 7px))
+
++keyframes(-xxx)
+  from
+    +transform(rotate(0deg) translate(0px, 0px))
+  to
+    +transform(rotate(-45deg) translate(8px, -7px))
 
 +keyframes(grow)
   from
