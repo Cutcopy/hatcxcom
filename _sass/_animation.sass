@@ -1,3 +1,36 @@
+// Section animation
+.container
+  opacity: 0
+  +transform(translateX(-500px))
+  +transition(0.3s linear)
+
+.fp-completely
+  .container
+    opacity: 1
+    //+filter(drop-shadow(0px 2px 4px transparentize($denim, 0.5)))
+    +transform(translateX(0px))
+    +animation(bounce 3s ease-out)
+
+
+
++keyframes(bounce)
+  0%
+    +transform(translate(-500px, -30px))
+    opacity: 0
+  30%
+    +transform(translate(0px, -30px))
+  50%
+    opacity: 1
+  100%
+    +transform(translate(0px, 0px))
+
++keyframes(bounce-out)
+  from
+    +transform(translatex(0px))
+  to
+    +transform(translateX(-500px))
+
+// 3. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Exist - Work info
 +keyframes(rotateWord)
   0%
     opacity: 0
@@ -18,17 +51,14 @@
   100%
     opacity: 0
 
-+keyframes(bounce)
-  from
-    +transform(translateY(30px))
-  to
-    +transform(translateY(0px))
-
-+keyframes(bounce-out)
-  from
-    +transform(translatex(0px))
-  to
-    +transform(translateX(-500px))
+// 5. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Careers
+.fp-viewing-careers
+  #code
+    +animation(down 1s linear 1s forwards)
+  #sketch
+    +animation(down 1s linear 1.5s forwards)
+  #analytics
+    +animation(down 1s linear 2s forwards)
 
 +keyframes(down)
   from
@@ -36,7 +66,17 @@
   to
     +transform(translateY(30px))
 
+// 6. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Flexible Hours
+
+#clock_icon
+  +transform(rotate(30deg))
+  +transition(1.5s ease-out)
+  +transform-origin(center)
+  +animation-delay(1s)
+
 .fp-viewing-flexibleHours
+  #clock_icon
+    +transform(rotate(0deg))
   .clockTime
     +animation(roll 3s ease-out)
     +transform-origin(center)
@@ -46,77 +86,14 @@
   .clockHour
     +animation(roll 72s linear infinite)
     +transform-origin(210px 215px)
+
 +keyframes(roll)
   from
     +transform(rotate(0deg))
   to
     +transform(rotate(360deg))
 
-.fp-viewing-casual
-  .sleeveLeft
-    +animation(unfoldLeft 2s)
-    +transform-origin(top center)
-  .sleeveRight
-    +animation(unfoldRight 2s)
-    +transform-origin(top center)
-  .tshirt
-    overflow: visible
-+keyframes(unfoldLeft)
-  from
-    +transform(rotate(180deg) scale(3))
-  to
-    +transform(rotate(0deg) scale(1))
-+keyframes(unfoldRight)
-  from
-    +transform(rotate(-180deg) scale(3))
-  to
-    +transform(rotate(0deg) scale(1))
-
-.fp-viewing-breakTime
-  .steams
-    +animation(steamMid 3s ease-out)
-    +animation-fill-mode(forwards)
-  .steam.middle
-    +animation(steamMid 2s 500ms linear)
-    +animation-fill-mode(forwards)
-  .steam.top
-    +animation(steamTop 2s 500ms linear)
-    +animation-fill-mode(forwards)
-
-+keyframes(steamMid)
-  from
-    +transform(translate(-13px, 90px))
-    opacity: 0
-  to
-    +transform(translate(0px))
-    opacity: 1
-+keyframes(steamTop)
-  from
-    +transform(translate(-61px, 122px))
-    opacity: 0
-  to
-    +transform(translate(0px))
-    opacity: 1
-
-.fp-viewing-vacation
-  .sunny
-    +animation(roll 30s linear infinite)
-    +transform-origin(center)
-
-.fp-viewing-bestPeeps
-  .horns
-    +animation(pivot 2s 1s ease-out)
-    +animation-fill-mode(forwards)
-    +transform-origin(bottom right)
-    opacity: 0
-+keyframes(pivot)
-  0%
-    opacity: 0.3
-    +transform(rotate(-30deg) perspective(500px) translateZ(300px))
-  100%
-    opacity: 1
-    +transform(rotate(0deg) translateZ(0px))
-
+// 7. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Events
 .heartfetti
   overflow: visible !important
 
@@ -172,3 +149,73 @@
     opacity: 0
   from
     opacity: 0.75
+
+// 8. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Casual Enviroment
+.fp-viewing-casual
+  .sleeveLeft
+    +animation(unfoldLeft 2s)
+    +transform-origin(top center)
+  .sleeveRight
+    +animation(unfoldRight 2s)
+    +transform-origin(top center)
+  .tshirt
+    overflow: visible
++keyframes(unfoldLeft)
+  from
+    +transform(rotate(180deg) scale(3))
+  to
+    +transform(rotate(0deg) scale(1))
++keyframes(unfoldRight)
+  from
+    +transform(rotate(-180deg) scale(3))
+  to
+    +transform(rotate(0deg) scale(1))
+
+// 9. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Breaktime
+.fp-viewing-breakTime
+  // .steams
+  //   +animation(steamMid 3s ease-out)
+  //   +animation-fill-mode(forwards)
+  .steam.middle
+    +animation(steamMid 2s 500ms linear)
+    +animation-fill-mode(forwards)
+  .steam.top
+    +animation(steamTop 2s 500ms linear)
+    +animation-fill-mode(forwards)
+
++keyframes(steamMid)
+  from
+    +transform(translate(-13px, 90px))
+    opacity: 0
+  to
+    +transform(translate(0px))
+    opacity: 1
++keyframes(steamTop)
+  from
+    +transform(translate(-61px, 122px))
+    opacity: 0
+  to
+    +transform(translate(0px))
+    opacity: 1
+
+
+// 10. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= VACAY
+.fp-viewing-vacation
+  .sunny
+    +animation(roll 30s linear infinite)
+    +transform-origin(center)
+
+// 11. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Best Peeps
+.fp-viewing-bestPeeps
+  .horns
+    +animation(pivot 2s 1s ease-out)
+    +animation-fill-mode(forwards)
+    +transform-origin(bottom right)
+    opacity: 0
++keyframes(pivot)
+  0%
+    opacity: 0.3
+    +transform(rotate(-30deg) perspective(500px) translateZ(300px))
+  100%
+    opacity: 1
+    +transform(rotate(0deg) translateZ(0px))
