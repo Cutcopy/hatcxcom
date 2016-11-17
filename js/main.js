@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
-        anchors:['top', 'about', 'whoWeAre', 'careers', 'flexibleHours','events', 'casual','breakTime', 'vacation','bestPeeps','jobs','roadAhead'],
+        anchors:['upTop', 'about', 'whoWeAre', 'careers', 'flexibleHours','events', 'casual','breakTime', 'vacation','bestPeeps','jobs','roadAhead'],
         //Scrolling
         css3: true,
         scrollingSpeed: 900,
@@ -18,7 +18,7 @@ $(document).ready(function() {
         scrollHorizontally: false,
         interlockedSlides: false,
         resetSliders: true,
-        normalScrollElements: '.bricktop',
+        normalScrollElements: null,
         scrollOverflow: false,
         scrollOverflowOptions: null,
         touchSensitivity: 15,
