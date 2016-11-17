@@ -133,7 +133,7 @@
 
   #Left-Contents-slide2, #Right-Contents-slide2, #Droplets-slide2
     opacity: 0
-    +animation(splash-2 300ms 1300ms)
+    //+animation(splash-2 300ms 1300ms)
     +animation-fill-mode(forwards)
 
 
@@ -144,9 +144,9 @@
 
   #star
     fill: white
-    +transform(scale(0) translate(15px, 30px))
+    +transform(scale(0) translate(27px, 50px))
     +transform-origin(center)
-    +animation(star 1s 1.4s linear)
+    +animation(star 1s 1.3s linear)
     +animation-fill-mode(forwards)
 
 +keyframes(tilt)
@@ -189,7 +189,7 @@
   0%
     +transform(scale(0) rotate(0deg))
   50%
-    +transform(scale(1) rotate(360deg))
+    +transform(scale(1.5) rotate(360deg))
   100%
     +transform(scale(0) rotate(0deg))
 // .heartfetti
@@ -306,10 +306,13 @@
 // 11. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Best Peeps
 .fp-viewing-bestPeeps
   .horns
-    +animation(pivot 2s 1s ease-out)
+    +not-phones
+      +animation(pivot 2s 1s ease-out)
+    +animation(pivot-sm 1s 1s ease-out)
     +animation-fill-mode(forwards)
     +transform-origin(bottom right)
-    opacity: 0
+    //opacity: 0
+
 +keyframes(pivot)
   0%
     opacity: 0.3
@@ -317,3 +320,11 @@
   100%
     opacity: 1
     +transform(rotate(0deg) translateZ(0px))
+
++keyframes(pivot-sm)
+  0%
+    opacity: 0.3
+    +transform(rotate(-30deg))
+  100%
+    opacity: 1
+    +transform(rotate(0deg))
