@@ -234,6 +234,11 @@
   p
     width: 100%
     text-align: center
+  a
+    color: $strawberry
+    &:hover
+      color: lighten($strawberry, 10%)
+      text-decoration: underline
   +phones
     //background: transparentize(white, 0.7)
     //color: white
@@ -264,9 +269,11 @@
   +phones
     +size(0px)
 
+
 .job-title
   width: 100%
   text-align: center
+
   +phones
     text-align: left
     &::after

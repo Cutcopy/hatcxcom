@@ -208,7 +208,6 @@ $logo: ($strawberry, $white, $white, $teal, $mustard, $strawberry,$denim, $white
         background: nth($logo, $i)
         border: 2px solid nth($logo, $i)
         color: nth($color, $i)
-  .mobilenav
-    .ghost-button:hover
-      background: transparent
-      color: nth($logo, $i) 
+        &:hover
+          background: transparentize(nth($color, $i), 0.2)
+          color: nth($logo, $i)
