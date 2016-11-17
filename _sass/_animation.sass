@@ -94,12 +94,17 @@
     +transform(rotate(360deg))
 
 // 7. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Events
+#cheers
+  opacity: 0
+  //+transition(0.3s)
 .fp-viewing-events
   #cheers
+    opacity: 1
     overflow: visible
     +transform(translateY(-30px))
   #WineglassLeft, #wineglassRight
     +transform-origin(center)
+    +animation-timing-function($ease-out-back)
 
   #WineglassLeft
     +animation(tilt 1s 1s)
@@ -137,7 +142,7 @@
   // 80%
   //   +transform(rotate(25deg) translate(90px, 52px))
   100%
-    +transform(rotate(21deg) translate(20px, 25px))
+    +transform(rotate(21deg) translate(-63px, -25px))
 
 +keyframes(tilt-reverse)
   0%
@@ -145,7 +150,7 @@
   // 80%
   //   +transform(rotate(-25deg) translate(-70px, -92px))
   100%
-    +transform(rotate(-28deg) translate(-50px, -52px))
+    +transform(rotate(-28deg) translate(-70px, -96px))
 
 +keyframes(splash-1)
   0%, 95%

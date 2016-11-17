@@ -64,7 +64,7 @@
   text-decoration: none
   font-weight: bold
   font-family: $header-font
-  font-size: 3rem
+  font-size: 2rem
   &:hover
     color: white
     background-color: transparentize(white, 0.5)
@@ -119,6 +119,9 @@
       li
         &:nth-child(2)
           display: block
+      .ghost-button
+        padding: 2rem
+
     // .ghost-button
     //   border-radius: 50%
     //   padding: 3rem
@@ -201,7 +204,11 @@ $logo: ($strawberry, $white, $white, $teal, $mustard, $strawberry,$denim, $white
         svg
           fill: nth($logo, $i)
           +transition(1s)
-        .ghost-button
-          background: nth($logo, $i)
-          border: 2px solid nth($logo, $i)
-          color: nth($color, $i)
+      .ghost-button
+        background: nth($logo, $i)
+        border: 2px solid nth($logo, $i)
+        color: nth($color, $i)
+  .mobilenav
+    .ghost-button:hover
+      background: transparent
+      color: nth($logo, $i) 
