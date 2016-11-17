@@ -53,7 +53,7 @@
   +not-phones
     display: none
   svg
-    +size(30px)
+    +size(20px)
 
 .ghost-button
   display: inline-block
@@ -102,6 +102,7 @@
   //height: 100vh
   #navigation-bar
     padding: 0.5rem
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25)
     //height: 100vh
   .row
     width: 100%
@@ -191,7 +192,7 @@
 //     display: block
 
 $sections: ('top')('about')('whoWeAre')('careers')('flexibleHours')('events')('casual')('breakTime')('vacation')('bestPeeps')('jobs')('roadAhead')('roadAhead')
-$color: ($white, $sky, $denim, $white, $strawberry, $denim,$mustard, $denim, $strawberry, $strawberry, $denim, $denim)
+$color: ($white, transparent, $denim, $white, $strawberry, $denim,$mustard, $denim, $strawberry, $strawberry, $denim, $denim)
 $logo: ($strawberry, $white, $white, $teal, $mustard, $strawberry,$denim, $white, $teal, $mustard, $white, $white)
 
 @for $i from 1 to length($sections)
@@ -199,7 +200,6 @@ $logo: ($strawberry, $white, $white, $teal, $mustard, $strawberry,$denim, $white
     .fp-viewing-#{nth($sections, $i)}
       #navigation-bar
         background: transparentize(nth($color, $i), 0.2)
-        box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25)
         +transition(0.5s)
         svg
           fill: nth($logo, $i)
@@ -211,3 +211,11 @@ $logo: ($strawberry, $white, $white, $teal, $mustard, $strawberry,$denim, $white
         &:hover
           background: transparentize(nth($color, $i), 0.2)
           color: nth($logo, $i)
+
+
+.fp-viewing-about
+  #navigation-bar.mobilenav
+    box-shadow: 0px 0px 0px transparent !important
+    background: transparentize($sky, 0.2)
+    .ghost-button
+      color: #sky

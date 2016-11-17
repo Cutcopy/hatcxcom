@@ -1,4 +1,4 @@
-.section
+.display
   background-size: cover
   background-position: center center
   background-repeat: no-repeat
@@ -40,7 +40,7 @@
 // .careers.active #analytics
 //   +animation(down 1s linear 1s forwards)
 
-// HERO
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= HERO
 
 .hero
   background-color: $strawberry
@@ -62,7 +62,7 @@
   +align-items(center)
   text-align: center
 
-// EXIST
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= EXIST
 
 .exist
   background-color: $denim
@@ -70,10 +70,10 @@
   p
     +phones
       font-size: 1rem
-  .container
-    +phones
-      padding-top: 5rem
-#emblem-header
+
+// #emblem-header
+//   +phones
+//     margin-top: 5rem
   +transition(5s ease-out)
 .emblem
   background: url(/img/emblem_white.svg)
@@ -84,11 +84,13 @@
   +not-phones
     margin-bottom: 4rem
   h2
-    font-size: 4rem
+    font-size: 3rem
     +not-phones
       font-size: 12rem
   .enlarged
     font-size: 6rem
+    +phones
+      font-size: 3rem
     +not-tablets
       font-size: 24rem
       line-height: 15rem
@@ -135,7 +137,7 @@
 .rw-wrapper
   text-align: center
 
-// ABOUT
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ABOUT
 .about
   background-color: $sky
   +bg($about)
@@ -148,7 +150,7 @@
       font-size: 1.3rem
   p
     +phones
-      font-size: 1rem
+      font-size: .85rem
 
 .heart
   +bg('/img/heart_white.svg')
@@ -246,7 +248,7 @@
     +flex-direction(row)
     +align-items(center)
     padding: 1rem
-    font-size: 1.5rem
+    font-size: 1.2rem
     font-weight: lighter
     +size(100%)
     margin: 1rem

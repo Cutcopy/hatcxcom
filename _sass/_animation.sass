@@ -1,17 +1,26 @@
 // Section animation
-.container
-  opacity: 0
-  +transform(translateX(-500px))
-  +transition(0.3s linear)
-
-.fp-completely
++not-phones
   .container
-    opacity: 1
-    //+filter(drop-shadow(0px 2px 4px transparentize($denim, 0.5)))
-    +transform(translateX(0px))
-    +animation(bounce 3s ease-out)
+    opacity: 0
+    +transform(translateX(-500px))
+    +transition(0.3s linear)
 
+  .fp-completely
+    .container
+      opacity: 1
+      //+filter(drop-shadow(0px 2px 4px transparentize($denim, 0.5)))
+      +transform(translateX(0px))
+      +animation(bounce 3s ease-out)
 
++phones
+  .container
+    opacity: 0
+    +transition(0.3s ease)
+
+  .fp-completely
+    .container
+      +animation(splash-3 1s)
+      +animation-fill-mode(forwards)
 
 +keyframes(bounce)
   0%
@@ -100,7 +109,7 @@
 // 7. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Events
 #cheers
   opacity: 0
-  //+transition(0.3s)
+  //+transition(0.1s)
 .fp-viewing-events
   #cheers
     opacity: 1
@@ -124,7 +133,7 @@
 
   #Left-Contents-slide2, #Right-Contents-slide2, #Droplets-slide2
     opacity: 0
-    +animation(splash-2 500ms 1300ms)
+    +animation(splash-2 300ms 1300ms)
     +animation-fill-mode(forwards)
 
 
@@ -157,7 +166,7 @@
     +transform(rotate(-28deg) translate(-70px, -96px))
 
 +keyframes(splash-1)
-  0%, 95%
+  0%, 80%
     opacity: 1
   100%
     opacity: 0
@@ -166,9 +175,9 @@
   0%
     opacity: 0
   90%
-    opacity: 1
+    opacity: .8
   100%
-    opacity: 1
+    opacity: 0
 
 +keyframes(splash-3)
   0%

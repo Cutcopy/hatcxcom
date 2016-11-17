@@ -31,7 +31,7 @@ $(document).ready(function() {
         recordHistory: true,
 
         //Custom selectors
-        sectionSelector: '.section',
+        sectionSelector: '.display',
         slideSelector: '.slide',
 
         //events
