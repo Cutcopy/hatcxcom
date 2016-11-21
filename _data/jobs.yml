@@ -1,3 +1,7 @@
-- title: Data Analyst
-  description: >
-    Apply
+# turn jobs on
+Hiring:  false
+#job post-it setup
+Positions:
+  - title: Data Analyst
+    description: >
+      Apply

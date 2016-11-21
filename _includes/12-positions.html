@@ -3,17 +3,23 @@
     <div class="row">
       <div class="col col--12-of-12">
         <h2>Available Positions</h2>
-        <p>Check back weekly. We are always hiring BIG thinkers and problem solvers.</p>
-      </div>
+        {% if site.data.jobs.Hiring == true %}
+          <p>Check back weekly. We are always hiring BIG thinkers and problem solvers.</p>
+        {% elsif  site.data.jobs.Hiring == false %}
+          <p><em>We currently have no open positions, but check back weekly and feel free to <a href="mailto:{{site.email}}">contact us</a>. We're always looking for great talented people who are solution oriented, loves to innovate, and want build some awesome stuff.</em></p>
+          {% include _svg/BrokenHeart.svg%}
+        {% endif %}
     </div>
-    <div class="post-it-row">
-      {% for job in site.data.jobs  %}
-      <div class="post-it">
-        <div class="pin"></div>
-        <div class="job-title">{{job.title}}</div>
-          <p><a href="#">{{job.description}}</a></p>
-      </div>
+    {% if site.data.jobs.Hiring == true %}
+      <div class="post-it-row">
+      {% for job in site.data.jobs.Positions  %}
+        <div class="post-it">
+          <div class="pin"></div>
+          <div class="job-title">{{job.title}}</div>
+            <p><a href="#">{{job.description}}</a></p>
+        </div>
       {% endfor %}
-    </div>
+      </div>
+    {% endif %}
   </div>
 </section>

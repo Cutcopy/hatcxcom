@@ -44,7 +44,7 @@
       position: relative
       top: 0.7rem
       +phones
-        max-width: 2rem
+        max-width: 3rem
 
 .drawer-open
   width: 70%
@@ -82,13 +82,15 @@
     svg
       max-width: 3rem
 
-.bricktop
-  opacity: 0
-  width: 0px
-  +transition(0.5s)
+.fp-viewing-upTop
+  .top-nav
+    ul
+      li
+        &:first-child
+          opacity: 0
+          width: 0px
+          +transition(0.9s ease-in)
 
-.fp-viewing-roadAhead .bricktop
-  opacity: 1
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= mobilenav!
 
 .mobilenav
@@ -117,13 +119,14 @@
     display: block
     width: 100%
     ul
-      li
-        &:nth-child(2)
-          display: block
-      .ghost-button
+      .bricktop
+        opacity: 1
+        width: 100%
+        display: block
         padding: 1.3rem
         margin: 0.5rem
-
+        a
+          padding: 1rem
     // .ghost-button
     //   border-radius: 50%
     //   padding: 3rem
@@ -219,4 +222,4 @@ $logo: ($strawberry, $white, $white, $teal, $mustard, $strawberry,$denim, $white
     box-shadow: 0px 0px 0px transparent !important
     background: transparentize($sky, 0.2)
     .ghost-button
-      color: #sky
+      color: $sky

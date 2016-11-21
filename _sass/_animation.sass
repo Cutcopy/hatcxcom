@@ -328,3 +328,23 @@
   100%
     opacity: 1
     +transform(rotate(0deg))
+
+// 12. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= JERBS
+#brokenHeart
+  overflow: visible
+  +transition(.5s)
+  opacity: 0
+
+.fp-viewing-jobs
+  #brokenHeart
+    opacity: 1
+    .brokenHeart-left
+      +animation(cracked 2s 1s ease-out forwards)
+    .brokenHeart-right
+      +animation(cracked 2s 1s ease-out forwards reverse)
+        
++keyframes(cracked)
+  from
+    +transform(translate(0px,0px))
+  to
+    +transform(translate(-30px, 10px))
