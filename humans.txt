@@ -1,0 +1,23 @@
+/* TEAM */
+
+
+Bryce Stradling
+brycestradling.com
+@losslessdesign
+Omaha, NE USA Planet Earth
+
+/* SITE */
+
+
+Last update: 11/2016
+
+
+Standards: HTML5, CSS3, JS
+
+
+Components: fullpage.js (http://www.alvarotrigo.com/fullPage/), jQuery, Sass, Jekyll
+
+
+Software: Atom.io, Chrome Browser
+
+/* "I continue to get further away from the usual painter's tools such as easel, palette, brushes, etc." - Jackson Pollock */

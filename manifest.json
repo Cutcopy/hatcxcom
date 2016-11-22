@@ -1,5 +1,5 @@
 {
-	"name": "",
+	"name": "HATCX.com",
 	"icons": [
 		{
 			"src": "\/android-chrome-192x192.png",
@@ -12,6 +12,8 @@
 			"type": "image\/png"
 		}
 	],
-	"theme_color": "#ffffff",
-	"display": "standalone"
+	"start_url": "http://hatcx.com",
+	"theme_color": "#2DCCD3",
+	"display": "standalone",
+	"orientation": "portrait"
 }

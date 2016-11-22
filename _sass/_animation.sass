@@ -76,19 +76,14 @@
     +transform(translateY(30px))
 
 // 6. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Flexible Hours
-.fp-viewing-careers
-  #clock_icon
-    opacity: 0
-
-#clock_icon
-  +transform(rotate(30deg))
-  +transition(1.5s ease-out)
-  +transform-origin(center)
-  +animation-delay(1s)
 
 .fp-viewing-flexibleHours
   #clock_icon
     opacity: 1
+    +transform(rotate(30deg))
+    +transition(1.5s ease-out)
+    +transform-origin(center)
+    +animation-delay(1s)
     +transform(rotate(0deg))
   .clockTime
     +animation(roll 3s ease-out)
@@ -192,61 +187,7 @@
     +transform(scale(1.5) rotate(360deg))
   100%
     +transform(scale(0) rotate(0deg))
-// .heartfetti
-//   overflow: visible !important
-//
-// .rect-row
-//   opacity: 0
-// .dots
-//   opacity: 0
-//
-// .fp-viewing-events
-//   #leftball
-//     +transform(translateX(-114px) rotate(-38deg))
-//     +animation(leftball 1s 1s ease-out)
-//     +animation-fill-mode(forwards)
-//     +transform-origin(top right)
-//   #rightball
-//     +transform(translateY(5px) rotate(40deg))
-//     +animation(rightball 1s 1s ease-out)
-//     +animation-fill-mode(forwards)
-//     +transform-origin(top left)
-//
-//
-//   .rect-row:nth-child(1)
-//     +animation(rects 1s 2s linear 3)
-//     +animation-fill-mode(forwards)
-//
-//   @for $i from 2 through 10
-//     .rect-row:nth-child(#{$i})
-//       +animation(rects 1s #{$i}s linear 3)
-//       +animation-fill-mode(forwards)
-//
-//   .dots:nth-child(1)
-//     +animation(rects 500ms 2s linear 3)
-//   @for $i from 2 through 17
-//     .dots:nth-child(#{$i})
-//       +animation(rects 500ms #{$i * 500}ms linear 3)
-//       //+animation-play-state(reverse)
-//       //+animation-fill-mode(forwards)
-//
-// +keyframes(leftball)
-//   from
-//     +transform(translateX(-114px) rotate(-38deg))
-//   to
-//     +transform(translateX(0px) rotate(0deg))
-//
-// +keyframes(rightball)
-//   from
-//     +transform(translateY(5px) rotate(40deg))
-//   to
-//     +transform(translateY(0px) rotate(0deg))
-//
-// +keyframes(rects)
-//   to
-//     opacity: 0
-//   from
-//     opacity: 0.75
+
 
 // 8. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Casual Enviroment
 .fp-viewing-casual
@@ -260,7 +201,7 @@
     overflow: visible
 +keyframes(unfoldLeft)
   from
-    +transform(rotate(180deg) scale(3))
+    +transform(rotate(180deg) scale(2))
   to
     +transform(rotate(0deg) scale(1))
 +keyframes(unfoldRight)
@@ -271,9 +212,6 @@
 
 // 9. -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Breaktime
 .fp-viewing-breakTime
-  // .steams
-  //   +animation(steamMid 3s ease-out)
-  //   +animation-fill-mode(forwards)
   .steam.middle
     +animation(steamMid 2s 500ms linear)
     +animation-fill-mode(forwards)
@@ -308,12 +246,13 @@
   opacity: 0
 .fp-viewing-bestPeeps
   .horns
+    +transition(0.5s)
     +not-phones
-      +animation(pivot 2s 1.5s ease-out)
+      +animation(pivot 2s 1.5s ease-out forwards)
     +animation(pivot-sm 1s 1s ease-out)
     +animation-fill-mode(forwards)
     +transform-origin(bottom right)
-    //opacity: 0
+
 
 +keyframes(pivot)
   0%
@@ -352,3 +291,28 @@
     +transform(translate(0px,0px))
   to
     +transform(translate(-30px, 10px))
+
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 404
+.bummer
+  +animation(colorfly 5s linear infinite)
+  position: relative
+  &:hover
+    &::after
+      width: 100%
+  &::after
+    display: block
+    position: absolute
+    left: 0
+    bottom: -10px
+    width: 0
+    height: 10px
+    background-color: $mustard
+    content: ""
+    transition: width 0.2s
+
++keyframes(colorfly)
+  0%, 100%
+    color: $mustard
+  50%
+    color: $strawberry

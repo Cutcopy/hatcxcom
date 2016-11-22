@@ -7,7 +7,7 @@
   +display(flex)
   +align-items(center)
   +justify-content(center)
-  +transition(3s)
+  //+transition(3s)
   //text-shadow: 0 4px 6px transparentize($denim, 0.5)
   //@media screen and (max-width: 700px)
     background-position: right
@@ -105,24 +105,25 @@
   +phones
     font-size: 2rem
 
-.rw-words
-  display: inline
-  text-decoration: underline
-  span
-    position: absolute
-    opacity: 0
-    overflow: hidden
-    +animation(rotateWord 18s linear infinite 0s)
-    &:nth-child(2)
-      +animation-delay(3s)
-    &:nth-child(3)
-      +animation-delay(6s)
-    &:nth-child(4)
-      +animation-delay(9s)
-    &:nth-child(5)
-      +animation-delay(12s)
-    &:nth-child(6)
-      +animation-delay(15s)
+.fp-viewing-about
+  .rw-words
+    display: inline
+    text-decoration: underline
+    span
+      position: absolute
+      opacity: 0
+      overflow: hidden
+      +animation(rotateWord 18s linear infinite 0s)
+      &:nth-child(2)
+        +animation-delay(3s)
+      &:nth-child(3)
+        +animation-delay(6s)
+      &:nth-child(4)
+        +animation-delay(9s)
+      &:nth-child(5)
+        +animation-delay(12s)
+      &:nth-child(6)
+        +animation-delay(15s)
 
 .rw-words-placeholder
   visibility: hidden
