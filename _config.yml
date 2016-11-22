@@ -6,7 +6,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "hatcx.com" # the base hostname & protocol for your site
 facebook: 'https://www.facebook.com/hatcxhealth/'
 twitter: 'https://twitter.com/HATCX_'
-
+# This effects urls.
+permalink: none
 # Build settings
 markdown: kramdown
 # repository: PAGES_REPO_NWO
