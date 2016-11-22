@@ -124,6 +124,7 @@
   .top-nav
     position: absolute
     top: 30%
+    left: 0%
     text-align: center
     display: block
     width: 100%
@@ -146,63 +147,37 @@
     //     display: block
     //     line-height: 4rem
   // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--= Hamburgler's delight
+.hamburger
+  +transition(600ms linear)
+  .span
+    display: block
+    //background: pink
+    height: 6px
+    width: 28px
+    +transition(0.3s)
+    &:first-child
+      margin-bottom: 3px
+    &:nth-child(2)
+      margin-bottom: 3px
+    &:nth-child(3)
+
+.mobilenav
   .hamburger
-    overflow: visible
     +transform(rotate(360deg))
-    rect
-      +transform-origin(center)
-      +animation-fill-mode(forwards)
-  .bun
-    +animation(xxx 0.5s)
-  .burger
-    //height: 0
-    opacity: 0
-    +transform-origin(right)
-    +transition(0.2s ease-out)
-  .bottom-bun
-    +animation(-xxx 0.5s)
-
-  // .bun
-  //   +transform-origin(center)
-  //   +transform(rotate(45deg) translate(8px, 7px))
-  //   +transition(0.5s)
-  // .bottom-bun
-  //   +transform-origin(center)
-  //   +transform(rotate(-45deg) translate(8px, -7px))
-  //   +transition(0.5s)
-  // .burger
-  //   opacity: 0
-  //   +transition(0.5s)
-
-+keyframes(xxx)
-  from
-    +transform(rotate(0deg) translate(0px, 0px))
-  to
-    +transform(rotate(45deg) translate(8px, 7px))
-
-+keyframes(-xxx)
-  from
-    +transform(rotate(0deg) translate(0px, 0px))
-  to
-    +transform(rotate(-45deg) translate(8px, -7px))
+    .span
+      &:first-child
+        +transform(rotate(45deg) translate(7px, 6px))
+      &:nth-child(2)
+        opacity: 0
+        width: 0
+      &:nth-child(3)
+        +transform(rotate(-45deg) translate(7px, -6px))
 
 +keyframes(grow)
   from
     height: 60px
   to
     height: 100vh
-// .fp-viewing-roadAhead .top-nav svg
-//   display: none
-//   transition: 0.6s
-
-// .mobilenav
-//
-//   svg
-//     max-width: 3rem
-//   +not-phones
-//     display: none
-//   +phones
-//     display: block
 
 $sections: ('upTop')('about')('whoWeAre')('careers')('flexibleHours')('events')('casual')('breakTime')('vacation')('bestPeeps')('jobs')('roadAhead')('roadAhead')
 $color: ($white, transparent, $denim, $white, $strawberry, $denim,$mustard, $denim, $strawberry, $strawberry, $denim, $denim)
@@ -217,6 +192,8 @@ $logo: ($strawberry, $white, $white, $teal, $mustard, $strawberry,$denim, $white
         svg
           fill: nth($logo, $i)
           +transition(1s)
+        .span
+          background: nth($logo, $i)
       .ghost-button
         background: nth($logo, $i)
         border: 2px solid nth($logo, $i)
