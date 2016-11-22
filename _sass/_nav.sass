@@ -33,6 +33,11 @@
     margin: 0
     padding-left: 0
     li
+      &:first-child
+        //↑ top button
+        opacity: 0
+        width: 0px
+        +transition(0.9s ease-in)
       display: inline
       margin-right: 0.5rem
     a
@@ -43,6 +48,10 @@
       top: 0.7rem
       +phones
         max-width: 3rem
+.fp-viewing-upTop
+  .mobilenav
+    .bricktop:first-child
+      opacity: 0
 
 .drawer-open
   width: 70%
@@ -81,14 +90,15 @@
     svg
       max-width: 3rem
 
-.fp-viewing-upTop
-  .top-nav
-    ul
-      li
-        &:first-child
-          opacity: 0
-          width: 0px
-          +transition(0.9s ease-in)
+// Top Button only shows when not up top
+
+@each $class in (('about')('whoWeAre')('careers')('flexibleHours')('events')('casual')('breakTime')('vacation')('bestPeeps')('jobs')('roadAhead')('roadAhead'))
+  .fp-viewing-#{$class}
+    .top-nav
+      ul
+        li
+          &:first-child
+            opacity: 1
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= mobilenav!
 

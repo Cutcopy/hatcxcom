@@ -295,7 +295,7 @@
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 404
 .bummer
-  +animation(colorfly 5s linear infinite)
+  //+animation(colorfly 5s linear infinite)
   position: relative
   &:hover
     &::after
@@ -311,8 +311,27 @@
     content: ""
     transition: width 0.2s
 
-+keyframes(colorfly)
-  0%, 100%
-    color: $mustard
-  50%
-    color: $strawberry
+// +keyframes(colorfly)
+//   0%, 100%
+//     color: $mustard
+//   50%
+//     color: $strawberry
+
+// -=-=-=-=-=-=- Party Parrot
+// .four0four
+//   h1
+//     +animation(glew 1s $ease-out-back infinite)
+//     +filter(drop-shadow(0px 0px 4px $denim))
+// +keyframes(glew)
+//   0%, 100%
+//     mix-blend-mode: color-dodge
+//     +transform(scale(1))
+//   20%
+//     mix-blend-mode: multiply
+//   40%
+//     mix-blend-mode: hard-light
+//   60%
+//     mix-blend-mode: lighten
+//     +transform(scale(0.5))
+//   80%
+//     mix-blend-mode: hue
